@@ -23,7 +23,7 @@ var display = function (d){
         color = d3.scaleThreshold()
         .domain([1, 10, 50, 200, 500, 1000, 2000, 4000])
          .range(d3.schemeOrRd[9]);
-        colorChanged = false;
+        colorChanged = false; 
         }
         else{
         color = d3.scaleThreshold()
