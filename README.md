@@ -4,7 +4,8 @@
 
 * Download shapefile
 
-From [Census Bureau website](http://www2.census.gov/geo/tiger/GENZ2016/shp/) New York(FIPS code 36) State in ACS 2016 5-year estimate
+    From [Census Bureau website](http://www2.census.gov/geo/tiger/GENZ2016/shp/) New York State(FIPS code 36) in ACS 2016 5-year estimate.
+    
     ```
     curl 'http://www2.census.gov/geo/tiger/GENZ2016/shp/cb_2016_36_tract_500k.zip' -o cb_2016_36_tract_500k.zip
     unzip -o cb_2015_36_tract_500k.zip
@@ -50,8 +51,7 @@ From [Census Bureau website](http://www2.census.gov/geo/tiger/GENZ2016/shp/) New
     
 * Convert GeoJson to TopoJson and reduce size
 
-Resulting NY-quantized-topo.json is used to display tracts boarders.
-
+    Resulting NY-quantized-topo.json is used to display tracts boarders.
     ```
     npm install -g topojson
     geo2topo -n tracts=NY-albers-density.ndjson > NY-tracts-topo.json
@@ -61,16 +61,14 @@ Resulting NY-quantized-topo.json is used to display tracts boarders.
     
 * Compute county geometry 
 
-Resulting NY-merge-topo.json is used to display county boundary
-
+    Resulting NY-merge-topo.json is used to display county boundary.
     ```
     topomerge -k 'd.id.slice(0, 3)' counties=tracts < NY-quantized-topo.json > NY-merge-topo.json
     ```
     
 * Compute county internal boarders
 
-Resulting NY-topo.json is used to hide state boundary
-
+    Resulting NY-topo.json is used to hide state boundary.
     ```
     topomerge --mesh -f 'a !== b' counties=counties < NY-merge-topo.json > NY-topo.json
     ```
@@ -81,7 +79,7 @@ https://wenzi3241.github.io/NY_Population_Density/
 
 ## Reference
 
-* [Command-Line Cartography](https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c)
+* [Command-Line Cartography tutorials](https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c)
 
 * [Mapshaper](http://mapshaper.org/)
 
