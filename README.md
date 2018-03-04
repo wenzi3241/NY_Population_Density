@@ -1,5 +1,11 @@
 # NY_Population_Density
 
+This is a course assignment of UCSC CMPS263 - Data visuilization. In this assignment, I created a visualization that is similar to the CA Population Density example created by Mike Bostock in the reference. With some additions:
+
+* Clickable button shows different color binding and legend.
+
+* Clickable button toggles state-boundary and census tract boundaries, where county boundaries will always be shown.
+
 ## Data Preparation
 
 * Download shapefile
