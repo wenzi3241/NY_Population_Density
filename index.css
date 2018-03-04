@@ -34,22 +34,15 @@ div.page-header{
 }
 
 div.page-footer{
-    background:lightyellow;
+    background:lightblue;
     text-align:left;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     line-height:1.7;
-}
-
-#myParagraph { 
-    font-size: 13px;
-}
-
-#buttongroup {
-    font-size: 13px;
 }
 
 
 div.col-md-2{
     text-align:center;
+    font-size: 10px;
 }
