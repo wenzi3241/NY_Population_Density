@@ -35,7 +35,7 @@ This is a course assignment of UCSC CMPS263 - Data visuilization. In this assign
     ```
     npm install -g ndjson-cli
     ndjson-split 'd.features' < NY-albers.json > NY-albers.ndjson
-    | ndjson-map 'd.id = d.properties.GEOID.slice(2), d' < NY-albers.ndjson > NY-albers-id.ndjson
+    ndjson-map 'd.id = d.properties.GEOID.slice(2), d' < NY-albers.ndjson > NY-albers-id.ndjson
     ```
 
 * Download population file and convert to ndjson
@@ -56,25 +56,23 @@ This is a course assignment of UCSC CMPS263 - Data visuilization. In this assign
     ```
     
 * Convert GeoJson to TopoJson and reduce size
-
-    Resulting NY-quantized-topo.json is used to display tracts boarders.
     ```
     npm install -g topojson
     geo2topo -n tracts=NY-albers-density.ndjson > NY-tracts-topo.json
-    | toposimplify -p 1 -f < NY-tracts-topo.json > NY-simple-topo.json
-    | topoquantize 1e5 < NY-simple-topo.json > NY-quantized-topo.json
+    toposimplify -p 1 -f < NY-tracts-topo.json > NY-simple-topo.json
+    topoquantize 1e5 < NY-simple-topo.json > NY-quantized-topo.json
     ```
     
 * Compute county geometry 
 
-    Resulting NY-merge-topo.json is used to display county boundary.
+    Resulting NY-merge-topo.json is used to show/hide county boundary with object.counties, whereas object.tracts will display everything
     ```
     topomerge -k 'd.id.slice(0, 3)' counties=tracts < NY-quantized-topo.json > NY-merge-topo.json
     ```
     
 * Compute county internal boarders
 
-    Resulting NY-topo.json is used to hide state boundary.
+    Resulting NY-topo.json is used to show/hide state boundary with object.counties, whereas object.tracts will display everything
     ```
     topomerge --mesh -f 'a !== b' counties=counties < NY-merge-topo.json > NY-topo.json
     ```

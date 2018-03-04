@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--D3-->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script>
@@ -29,15 +30,15 @@
                 <svg width="1100" height="960" id="map"></svg>
             </div>
             <script>
-                //Set global default values
+                //Set global values to keep track current state of canvas
                 var colorChanged = false;
-                var hideStateBoarder = false;
-                var hideTractsBoarder = false;
+                var showStateBoarder = false;
+                var showTractsBoarder = false;
                 var input_file = "NY-topo.json";
                 var color = d3.scaleThreshold()
                 .domain([1, 10, 50, 200, 500, 1000, 2000, 4000])
                 .range(d3.schemeOrRd[9]);    
-                
+                //Display default map
                 display(1);
             </script>
             <div class="col-md-2">
