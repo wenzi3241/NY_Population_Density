@@ -1,6 +1,6 @@
 # NY_Population_Density
 
-This is a course assignment of UCSC CMPS263 - Data visuilization. In this assignment, I created a visualization that is similar to the CA Population Density example created by Mike Bostock in the reference. With some additions:
+This is a course assignment of UCSC CMPS263 - Data visuilization. In this assignment, I created a visualization that is similar to the [CA Population Density](https://bl.ocks.org/mbostock/5562380) example created by Mike Bostock with some additions:
 
 * Clickable button shows different color binding and legend.
 
