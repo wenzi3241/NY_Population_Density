@@ -1,0 +1,55 @@
+body
+{
+	text-align:left;
+	vertical-align:middle;
+}
+
+body path.highlight
+{
+    stroke: #000;
+}
+
+.caption
+{
+	font-weight: bold;
+}
+
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height:1.7;
+}
+
+div.page-header{
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.12;
+    letter-spacing: -0.9px;
+    margin-bottom: .5em;
+    margin-top: 0;
+    color: #222;
+    text-align: center;
+}
+
+div.page-footer{
+    background:lightyellow;
+    text-align:left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height:1.7;
+}
+
+#myParagraph { 
+    font-size: 13px;
+}
+
+#buttongroup {
+    font-size: 13px;
+}
+
+
+div.col-md-2{
+    text-align:center;
+}

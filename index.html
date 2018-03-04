@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    
+  <head>
+    <!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="index.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+    
+  <body>
+    
+    <div class = "container">
+      <div class="page-header">
+          <h1><b>New York Population Density, 2015</b></h1>
+      </div>
+    
+        <div class="row">
+            <div class="col-md-8">
+                <svg width="1100" height="960" id="map"></svg>
+            </div>
+            <script>
+                //Set global default values
+                var colorChanged = false;
+                var hideStateBoarder = false;
+                var hideTractsBoarder = false;
+                var input_file = "NY-topo.json";
+                var color = d3.scaleThreshold()
+                .domain([1, 10, 50, 200, 500, 1000, 2000, 4000])
+                .range(d3.schemeOrRd[9]);    
+                
+                display(1);
+            </script>
+            <div class="col-md-2">
+                <div class="btn-group-vertical">
+                    <button id="colorButton" type="button" class="btn btn-info" onclick="display(2)">Change Legend Color</button>
+                </div>
+                <div class="btn-group-vertical">
+                    <button id="stateBtn" type="button" class="btn btn-info" onclick="display(3)">Toggle State Boundary</button>
+                </div>
+                <div class="btn-group-vertical">
+                    <button id="tractBtn" type="button" class="btn btn-info" onclick="display(4)">Toggle Census Tract Boundary</button>
+                </div>
+                 
+            </div>
+       </div>
+    
+        <div class="page-footer">
+              <p id="myParagraph">
+                <a href="http://worldhappiness.report/">Github Link</a>
+                <br>
+                Name: Wen Cui
+                <br>
+                Instructor: Suresh Lodha
+                <br>
+                CMPS 263: Data programming for Visualization
+                <br>
+                Winter 2018
+                </p>
+          </div>
+    </div> 
+  </body>
+</html>
